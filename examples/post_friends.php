@@ -22,6 +22,14 @@ if ($user) {
   }
 }
 
+// Login or logout url will be needed depending on current user state.
+if ($user) {
+  $logoutUrl = $facebook->getLogoutUrl();
+} else {
+  $statusUrl = $facebook->getLoginStatusUrl();
+  $loginUrl = $facebook->getLoginUrl();
+}
+
 ?>
 
 <!doctype html>
